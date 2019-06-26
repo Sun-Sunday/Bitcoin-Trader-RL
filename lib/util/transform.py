@@ -2,8 +2,8 @@ import numpy as np
 
 
 def transform(df, columns=None, transform_fn=None):
-    transformed_df = df.copy().fillna(method='bfill')
-
+#     transformed_df = df.copy().fillna(method='bfill')
+    transformed_df = df.copy().fillna(method='ffill')
     if columns is None:
         transformed_df = transform_fn(transformed_df)
     else:
